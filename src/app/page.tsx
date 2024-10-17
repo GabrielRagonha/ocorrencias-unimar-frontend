@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <main className="h-dvh pt-32">
+    <main className="h-dvh bg-auth-banner bg-cover bg-no-repeat bg-center pt-32">
       <LoginForm />
     </main>
   );
