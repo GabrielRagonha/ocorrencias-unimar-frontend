@@ -7,8 +7,9 @@ export const RegisterSchema = z
       .string()
       .min(1, { message: "O endereço de email é obrigatório" })
       .email({ message: "Endereço de email inválido" }),
-    ra: z.string().min(1, { message: "O RA é obrigatório" }),
-    user: z.string().min(1, { message: "O usuário é obrigatório" }),
+    studentRegister: z
+      .string({ message: "O RA deve ser numérico" })
+      .min(1, { message: "O RA é obrigatório" }),
     password: z
       .string()
       .min(8, { message: "A senha deve possuir no mínimo 8 dígitos" }),
@@ -23,7 +24,10 @@ export const RegisterSchema = z
   });
 
 export const LoginSchema = z.object({
-  user: z.string().min(1, { message: "O usuário é obrigatório" }),
+  email: z
+    .string()
+    .min(1, { message: "O endereço de email é obrigatório" })
+    .email({ message: "Endereço de email inválido" }),
   password: z
     .string()
     .min(8, { message: "A senha deve possuir no mínimo 8 caracteres" }),
