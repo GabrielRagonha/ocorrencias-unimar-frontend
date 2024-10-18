@@ -107,32 +107,17 @@ export default function RegisterForm() {
           </label>
 
           <label
-            htmlFor="ra"
+            htmlFor="studentRegister"
             className="flex flex-col gap-2 font-poppins font-bold text-[1rem]/[1rem] text-white tracking-[0.02rem]"
           >
             RA
             <input
               className={`border-[0.0625rem] border-[#B6C9C8] h-8 p-1 rounded-lg font-normal text-sm text-dark-primary outline-dark-primary`}
               type="text"
-              {...register("ra")}
-              id="ra"
+              {...register("studentRegister")}
+              id="studentRegister"
               aria-label="Campo de RA"
               autoComplete="on"
-            />
-          </label>
-
-          <label
-            htmlFor="user"
-            className="flex flex-col gap-2 font-poppins font-bold text-[1rem]/[1rem] text-white tracking-[0.02rem]"
-          >
-            Usuário
-            <input
-              className={`border-[0.0625rem] border-[#B6C9C8] h-8 p-1 rounded-lg font-normal text-sm text-dark-primary outline-dark-primary`}
-              type="text"
-              {...register("user")}
-              id="user"
-              aria-label="Campo de usuário"
-              autoComplete="off"
             />
           </label>
 

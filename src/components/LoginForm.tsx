@@ -11,10 +11,7 @@ import { LoginFormValues } from "@/lib/interfaces";
 import Link from "next/link";
 
 export default function LoginForm() {
-  const {
-    register,
-    handleSubmit,
-  } = useForm<LoginFormValues>();
+  const { register, handleSubmit } = useForm<LoginFormValues>();
 
   const [visiblePass, setVisiblePass] = useState(false);
   const router = useRouter();
@@ -51,7 +48,7 @@ export default function LoginForm() {
       }
 
       showToast("success", <p>{message}</p>);
-      // router.push("/");
+      router.push("/criar-conta");
     } catch (error: any) {
       showToast(
         "error",
@@ -73,15 +70,15 @@ export default function LoginForm() {
 
         <div className="flex flex-col gap-4 w-full">
           <label
-            htmlFor="user"
+            htmlFor="email"
             className="flex flex-col gap-2 font-poppins font-bold text-[1rem]/[1rem] text-white tracking-[0.02rem]"
           >
-            Usuário
+            Email
             <input
               className={`border-[0.0625rem] border-[#B6C9C8] h-8 p-1 rounded-lg font-normal text-sm text-dark-primary outline-dark-primary`}
               type="text"
-              {...register("user")}
-              id="user"
+              {...register("email")}
+              id="email"
               aria-label="Campo de usuário"
               autoComplete="off"
             />
