@@ -16,7 +16,9 @@ export async function POST(request: Request) {
       );
     }
 
-    await apiClient.post(`/`, parsedData.data);
+    const { terms, confirmPassword, ...data } = parsedData.data;
+
+    await apiClient.post(`/users`, { ...data, role: "student" });
 
     return NextResponse.json({ message: "Cadastro feito com sucesso!" });
   } catch (error: any) {
