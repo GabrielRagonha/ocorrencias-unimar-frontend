@@ -3,15 +3,14 @@ export interface ProviderProps {
 }
 
 export interface LoginFormValues {
-  user: string;
+  email: string;
   password: string;
 }
 
 export interface RegisterFormValues {
   name: string;
   email: string;
-  ra: number;
-  user: string;
+  studentRegister: number;
   password: string;
   confirmPassword: string;
   terms: string;
