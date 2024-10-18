@@ -16,9 +16,23 @@ export async function POST(request: Request) {
       );
     }
 
-    await apiClient.post(`/user/auth`, parsedData.data);
+    const response = await apiClient.post(`/auth/login`, parsedData.data);
 
-    return NextResponse.json({ message: "Login feito com sucesso!" });
+    const token = response.data.access_token;
+
+    const responseCookie = NextResponse.json({
+      message: "Login feito com sucesso!",
+    });
+
+    responseCookie.cookies.set("ocorrencias_token", token, {
+      httpOnly: true,
+      secure: process.env.NEXT_PUBLIC_NODE_ENV === "production",
+      sameSite: "strict",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // Expira em 1 semana
+    });
+
+    return responseCookie;
   } catch (error: any) {
     return NextResponse.json(
       {
