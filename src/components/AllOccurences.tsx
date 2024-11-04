@@ -10,7 +10,7 @@ export default function AllOccurrences() {
 
   const fetchOccurrences = async () => {
     try {
-      const response = await fetch("/api/ocurrences", {
+      const response = await fetch("/api/ocurrences/list", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function OccurrencesPage() {
   return (
-    <main className="min-h-dvh h-full bg-dark-secondary flex flex-col gap-20 items-center justify-center">
+    <main className="min-h-dvh h-full bg-dark-secondary flex flex-col gap-20 items-center justify-center py-4">
       <AllOccurrences />
     </main>
   );

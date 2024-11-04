@@ -12,7 +12,7 @@ export default function OccurrenceCreateArea() {
 
   const onSubmit = async (data: OcurrenceFormValues) => {
     try {
-      const response = await fetch("/api/ocurrences", {
+      const response = await fetch("/api/ocurrences/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
