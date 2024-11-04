@@ -1,6 +1,6 @@
 "use client";
 
-// import { deleteCookie } from "@/hooks/useCookie";
+import { showToast } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,8 +9,34 @@ export default function Header() {
   const router = useRouter();
 
   const logout = async () => {
-    // deleteCookie("ocorrencias_token");
-    router.refresh();
+    try {
+      const response = await fetch("/api/logout", {
+        method: "POST",
+      });
+
+      const { message } = await response.json();
+
+      if (!response.ok) {
+        if (message) {
+          showToast("error", <p>{message}</p>);
+          return;
+        }
+
+        showToast("error", <p>Ocorreu um erro desconhecido!</p>);
+        return;
+      }
+
+      showToast("success", <p>{message}</p>);
+
+      router.refresh();
+    } catch (error: any) {
+      showToast(
+        "error",
+        <p>
+          {error.message || "Ocorreu um erro ao tentar criar uma ocorrência!"}
+        </p>
+      );
+    }
   };
 
   return (
