@@ -102,7 +102,7 @@ export default function RegisterForm() {
               {...register("email")}
               id="email"
               aria-label="Campo de email"
-              autoComplete="off"
+              autoComplete="on"
             />
           </label>
 
@@ -161,6 +161,7 @@ export default function RegisterForm() {
               {...register("confirmPassword")}
               id="confirmPassword"
               aria-label="Campo de confirmação de senha"
+              autoComplete="off"
             />
             {visibleConfirmPass ? (
               <IconVisible

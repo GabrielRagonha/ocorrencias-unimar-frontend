@@ -94,6 +94,7 @@ export default function LoginForm() {
               {...register("password")}
               id="password"
               aria-label="Campo de senha"
+              autoComplete="off"
             />
             {visiblePass ? (
               <IconVisible
