@@ -1,3 +1,4 @@
+import AllOccurrences from "@/components/AllOccurences";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function OccurrencesPage() {
   return (
-    <main className="min-h-dvh h-full bg-dark-secondary">
-      <p>LISTAGEM DE OCORRENCIAS</p>
+    <main className="min-h-dvh h-full bg-dark-secondary flex flex-col gap-20 items-center justify-center">
+      <AllOccurrences />
     </main>
   );
 }

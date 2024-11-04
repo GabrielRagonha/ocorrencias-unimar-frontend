@@ -48,7 +48,7 @@ export default function LoginForm() {
       }
 
       showToast("success", <p>{message}</p>);
-      router.push("/criar-conta");
+      router.push("/ocorrencias");
     } catch (error: any) {
       showToast(
         "error",
@@ -80,7 +80,6 @@ export default function LoginForm() {
               {...register("email")}
               id="email"
               aria-label="Campo de usuário"
-              autoComplete="off"
             />
           </label>
 

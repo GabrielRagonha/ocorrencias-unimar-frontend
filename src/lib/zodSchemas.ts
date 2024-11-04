@@ -32,3 +32,10 @@ export const LoginSchema = z.object({
     .string()
     .min(8, { message: "A senha deve possuir no mínimo 8 caracteres" }),
 });
+
+export const OccurrenceSchema = z.object({
+  description: z
+    .string()
+    .min(1, { message: "A descrição da ocorrência é obrigatória" }),
+  isAnonymous: z.boolean(),
+});

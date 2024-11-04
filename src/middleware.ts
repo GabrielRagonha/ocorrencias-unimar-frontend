@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import getCookie from "./hooks/useCookie";
 
 export const config = {
   matcher: "/((?!api|static|.*\\..*|_next).*)",
 };
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("ocorrencias_token");
+  const token = getCookie("ocorrencias_token");
   const pathname = request.nextUrl.pathname;
 
   // Se o token estiver presente e a rota for '/' ou '/criar-conta', redireciona para '/ocorrencias'

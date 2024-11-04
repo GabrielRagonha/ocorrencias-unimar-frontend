@@ -15,3 +15,8 @@ export interface RegisterFormValues {
   confirmPassword: string;
   terms: string;
 }
+
+export interface OcurrenceFormValues {
+  description: string;
+  isAnonymous: string;
+}
