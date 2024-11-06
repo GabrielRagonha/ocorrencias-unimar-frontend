@@ -43,3 +43,21 @@ export const showToast = (
       return toast(content, optionsToApply);
   }
 };
+
+export const nameAbbreviation = (name: string) => {
+  const words = name.trim().split(" ");
+
+  if (words.length > 1) {
+    return `${words[0][0]}${words[1][0]}`.toUpperCase();
+  }
+
+  return words[0][0].toUpperCase();
+};
+export const fullBrazilianDate = (date: string) => {
+  const newDate = new Date(date);
+  const day = String(newDate.getDate()).padStart(2, "0");
+  const month = String(newDate.getMonth() + 1).padStart(2, "0");
+  const year = String(newDate.getFullYear()).slice(-2);
+
+  return `${day}/${month}/${year}`;
+};

@@ -20,3 +20,7 @@ export interface OcurrenceFormValues {
   description: string;
   isAnonymous: string;
 }
+
+export interface ResponseFormValues {
+  text: string;
+}

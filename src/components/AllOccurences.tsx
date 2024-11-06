@@ -1,6 +1,6 @@
 "use client";
 
-import { showToast } from "@/lib/utils";
+import { nameAbbreviation, showToast } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -49,16 +49,6 @@ export default function AllOccurrences() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const nameAbbreviation = (name: string) => {
-    const words = name.trim().split(" ");
-
-    if (words.length > 1) {
-      return `${words[0][0]}${words[1][0]}`.toUpperCase();
-    }
-
-    return words[0][0].toUpperCase();
   };
 
   useEffect(() => {

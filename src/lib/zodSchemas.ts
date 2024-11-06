@@ -39,3 +39,10 @@ export const OccurrenceSchema = z.object({
     .min(1, { message: "A descrição da ocorrência é obrigatória" }),
   isAnonymous: z.boolean(),
 });
+
+export const ResponseSchema = z.object({
+  text: z
+    .string()
+    .min(1, { message: "A resposta da ocorrência é obrigatória" }),
+  id: z.string().min(1, { message: "O ID é obrigatório" }),
+});

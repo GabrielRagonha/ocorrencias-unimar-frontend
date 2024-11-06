@@ -2,11 +2,14 @@ import { NextResponse } from "next/server";
 import { apiClient } from "@/lib/clients";
 import { getCookie } from "@/hooks/useCookie";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
     const token = getCookie("ocorrencias_token");
 
-    const response = await apiClient.get(`/ocorrencias/1`, {
+    const response = await apiClient.get(`/ocorrencias/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
